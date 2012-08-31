@@ -21,10 +21,10 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'cucumber-rails' :require => false
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'launchy'
-  gem 'rb-fsevent' :require => false
+  gem 'rb-fsevent', :require => false
   gem 'ruby_gntp'
 end
 
