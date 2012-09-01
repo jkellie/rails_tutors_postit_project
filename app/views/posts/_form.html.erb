@@ -12,8 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+    <%= f.label :url %>
+    <%= f.text_field :url, placeholder: "enter a web address..." %>
+		<%= f.label :user_id %>
+		<%= f.select( :user_id, User.all.collect { |l| [l.name, l.id] }, :prompt => true ) %>
   </div>
   <div class="actions">
     <%= f.submit %>
