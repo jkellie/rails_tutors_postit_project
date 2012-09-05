@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   attr_accessible :url, :user_id, :title
   belongs_to :user
-  has_many :posts
+  has_many :comments
   
   validates :url,     presence: true
   validates :user_id, presence: true
