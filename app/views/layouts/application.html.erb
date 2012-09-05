@@ -14,7 +14,9 @@
 		</div>
 		<br />
 		<div class="container">
-
+		<% unless flash.empty? %>
+			<p class="alert"><%= notice %></p>
+		<% end %>
 		<%= yield %>
 
 		</div>
