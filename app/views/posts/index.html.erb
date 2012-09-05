@@ -18,7 +18,7 @@
   <tr>
 		<td><%= counter %></td>
     <td><%= post.title %></td>
-		<td><%= post.url %></td>
+		<td><%= link_to(post.url, post.url) %></td>
 		<td><%= post.user.name %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -27,8 +27,8 @@
 	<% counter += 1 %>
 <% end %>
 </table>
-
 <br />
-
-
-<%= link_to 'New User', new_user_path %>
+<br />
+<br />
+<br />
+<%= link_to 'New User', new_user_path, class: "btn" %>
