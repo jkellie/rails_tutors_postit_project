@@ -9,7 +9,7 @@
 		<th>Title</th>
 		<th>Url</th>
     <th>Poster</th>
-    <th></th>
+    <th>Comments</th>
     <th></th>
     <th></th>
   </tr>
@@ -20,9 +20,7 @@
     <td><%= post.title %></td>
 		<td><%= link_to(post.url, fix_url(post.url)) %></td>
 		<td><%= post.user.name %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td>View | Add</td>
   </tr>
 	<% counter += 1 %>
 <% end %>
