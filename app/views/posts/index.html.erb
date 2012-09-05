@@ -1,17 +1,22 @@
-<h1>Listing posts</h1>
-
-<table>
+<%= link_to 'Add A Post-It', new_post_path, class: "btn" %>
+<br />
+<br />
+<h2>While you were out...</h2>
+<br />
+<table class="table">
   <tr>
+		<th></th>
 		<th>Title</th>
 		<th>Url</th>
-    <th>By</th>
+    <th>Poster</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
+<% counter = 1 %>
 <% @posts.each do |post| %>
   <tr>
+		<td><%= counter %></td>
     <td><%= post.title %></td>
 		<td><%= post.url %></td>
 		<td><%= post.user.name %></td>
@@ -19,9 +24,11 @@
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
+	<% counter += 1 %>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Post', new_post_path %>
+
+<%= link_to 'New User', new_user_path %>

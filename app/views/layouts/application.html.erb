@@ -6,8 +6,12 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
+		<div class="offset1">
+			<%= link_to((image_tag 'logo.jpg'), root_path) %><span class="lead"> Add a link... share the awesome!</span>
+		</div>
+		<br />
 		<div class="container">
-		<h1><%= link_to((image_tag 'logo.jpg'), root_path) %></h1>
+
 		<%= yield %>
 
 		</div>
