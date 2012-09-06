@@ -20,6 +20,8 @@
 		<%= f.select( :user_id, User.all.collect { |l| [l.name, l.id] }, :prompt => true ) %>
   </div>
   <div class="actions">
-    <%= f.submit :class => 'btn btn-primary'%>
+    <%= f.submit "Post-It", :class => 'btn btn-primary'%>
   </div>
+	<br />
+	<p>Wanna be a user?</p><%= link_to "click here", new_user_path, class: "btn" %>
 <% end %>
