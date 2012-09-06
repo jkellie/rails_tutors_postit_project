@@ -1,4 +1,7 @@
-<h2>Loving notes of encouragement...</h2>
+<h1>Post: <%= @post.title %></h1>
+<p class="lead"><%= @post.url %></p>
+
+<h3>Loving notes of encouragement...</h3>
 
 <table class="table">
   <tr>
@@ -8,7 +11,7 @@
 
 <% @post.comments.each do |comment| %>
   <tr>
-    <td><%= comment.body %></td>
+    <td><em>"<%= comment.body %>"</em></td>
     <td><%= comment.user.name %></td>
   </tr>
 <% end %>
@@ -26,3 +29,5 @@
 		<%= f.submit "Post-It", class: "btn btn-primary" %>
 	<% end %>
 </p>
+<br />
+<p>Wanna be a user?</p><%= link_to "click here", new_user_path, class: "btn" %>
