@@ -17,5 +17,8 @@ class CommentsController < ApplicationController
         format.html { redirect_to post_comments_path(@post), notice: 'Comment NOT created.' }
       end
     end
+    
   end
+  
+  
 end
