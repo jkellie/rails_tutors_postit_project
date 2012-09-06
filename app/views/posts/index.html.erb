@@ -20,7 +20,7 @@
     <td><%= post.title %></td>
 		<td><%= link_to(post.url, fix_url(post.url)) %></td>
 		<td><%= post.user.name %></td>
-		<td><%= post.comments.size %> | View | Add</td>
+		<td><%= post.comments.size %> | <%= link_to "View", post_comments_path(post) %></td>
   </tr>
 	<% counter += 1 %>
 <% end %>

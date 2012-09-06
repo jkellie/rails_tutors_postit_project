@@ -1,27 +1,28 @@
-<h1>Listing comments</h1>
+<h2>Loving notes of encouragement...</h2>
 
-<table>
+<table class="table">
   <tr>
-    <th>Body</th>
-    <th>User</th>
-    <th>Post</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Note</th>
+    <th>Who said that?</th>
   </tr>
 
-<% @comments.each do |comment| %>
+<% @post.comments.each do |comment| %>
   <tr>
     <td><%= comment.body %></td>
-    <td><%= comment.user_id %></td>
-    <td><%= comment.post_id %></td>
-    <td><%= link_to 'Show', comment %></td>
-    <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= comment.user.name %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Comment', new_comment_path %>
+<p>Leave a note:
+	<%= form_for(Comment.new, url: post_comments_path(@post)) do |f| %>
+		<%= f.text_area :body, rows: 7, class: "span6" %>
+		<br />
+		Who are you?<br />
+		<%= f.select( :user_id, User.all.collect { |l| [l.name, l.id] }, :prompt => true ) %>
+		<br />
+		<%= f.submit "Post-It", class: "btn btn-primary" %>
+	<% end %>
+</p>
