@@ -4,25 +4,11 @@
 <h2>While you were out...</h2>
 <br />
 <table class="table table-striped">
-  <!-- <tr>
-		<th></th>
-		<th>Title</th>
-		<th>Url</th>
-    <th>Poster</th>
-    <th>Comments</th>
-    <th></th>
-    <th></th>
-  </tr> -->
 <% counter = 1 %>
 <% @posts.each do |post| %>
   <tr>
 		<td class"span2"><h1><%= counter %></h1></td>
 		<td><%= render 'summary', post: post %></td>
-		
-    <!-- <td><%= post.title %></td>
-		<td><%= link_to(post.url, fix_url(post.url)) %></td>
-		<td><%= post.user.name %></td>
-		<td><%= post.comments.size %> | <%= link_to "View", post_comments_path(post) %></td> -->
   </tr>
 	<% counter += 1 %>
 <% end %>
