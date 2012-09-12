@@ -7,7 +7,7 @@
 <% counter = 1 %>
 <% @posts.each do |post| %>
   <tr>
-		<td class"span2"><h1><%= counter %></h1></td>
+	  <td><%= link_to 'vote up', voteup_post_path(post), class: "btn" %></td>
 		<td><%= render 'summary', post: post %></td>
   </tr>
 	<% counter += 1 %>

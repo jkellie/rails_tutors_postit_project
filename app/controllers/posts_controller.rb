@@ -36,5 +36,27 @@ class PostsController < ApplicationController
       end
     end
   end
+  
+  def voteup
+    @post = Post.find(params[:id])
+    
+    @post.vote_score = @post.vote_score + 1
+    @post.save
+    
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Thank you for voting.' }
+    end
+  end
+  
+  def votedown
+    @post = Post.find(params[:post])
+    
+    @post.vote_score = @post.vote_score - 1
+    @post.save
+    
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'Thank you for voting.' }
+    end
+  end
 
 end

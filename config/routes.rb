@@ -7,5 +7,6 @@ Postit::Application.routes.draw do
     resources :comments
   end
   
-  
+  match 'posts/voteup/:id' => 'posts#voteup', :as => 'voteup_post'
+  match 'posts/votedown/:id' => 'posts#votedown'
 end
