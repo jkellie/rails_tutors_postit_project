@@ -7,7 +7,7 @@
 <% counter = 1 %>
 <% @posts.each do |post| %>
   <tr>
-	  <td><%= render 'vote_rank', post: post %></td>
+	  <td><%= render 'vote_rank', post: post, counter: counter %></td>
 		<td><%= render 'summary', post: post %></td>
   </tr>
 	<% counter += 1 %>

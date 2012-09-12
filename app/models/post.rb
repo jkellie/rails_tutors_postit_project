@@ -7,5 +7,5 @@ class Post < ActiveRecord::Base
   validates :user_id, presence: true
   validates :title,   presence: true
   
-  default_scope order: 'posts.created_at DESC'
+  default_scope order: 'posts.vote_score DESC'
 end
