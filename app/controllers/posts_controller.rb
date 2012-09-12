@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   end
   
   def votedown
-    @post = Post.find(params[:post])
+    @post = Post.find(params[:id])
     
     @post.vote_score = @post.vote_score - 1
     @post.save

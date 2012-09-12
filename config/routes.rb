@@ -8,5 +8,5 @@ Postit::Application.routes.draw do
   end
   
   match 'posts/voteup/:id' => 'posts#voteup', :as => 'voteup_post'
-  match 'posts/votedown/:id' => 'posts#votedown'
+  match 'posts/votedown/:id' => 'posts#votedown', :as => 'votedown_post'
 end
