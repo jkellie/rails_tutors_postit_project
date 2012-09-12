@@ -1,4 +1,4 @@
-<h1>Post: <%= @post.title %></h1>
+<h1>Post: <%= link_to @post.title, fix_url(@post.url) %></h1>
 <p class="lead"><%= @post.url %></p>
 
 <h3>Loving notes of encouragement...</h3>
