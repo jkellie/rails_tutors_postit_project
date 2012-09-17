@@ -45,6 +45,7 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to root_path, notice: 'Thank you for voting.' }
+      format.js
     end
   end
   

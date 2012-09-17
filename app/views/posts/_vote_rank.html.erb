@@ -4,4 +4,6 @@
 	<%= link_to '<i class="icon-plus"></i>'.html_safe, voteup_post_path(post), class: "btn btn-mini" %>
 	<%= link_to '<i class="icon-minus"></i>'.html_safe, votedown_post_path(post), class: "btn btn-mini" %>
 </div>
-<em>Votes: <%= post.vote_score %></em>
+<div id="total_votes_<%= post.id %>">
+	<em>Votes: <%= post.vote_score %></em>
+</div>
